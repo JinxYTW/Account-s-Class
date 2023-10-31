@@ -1,9 +1,10 @@
 #include <iostream>
+#include "account.h"
 
 class PrimaryAccount : public Account {
 
 public:
-	PrimaryAccount(std::string FullName, std::string IBAN, double sold;double decouvert) : Account(std::string FullName, std::string IBAN, double sold);
+	PrimaryAccount(std::string FullName, std::string IBAN, double sold,double decouvert); 
 	
 	
 private:

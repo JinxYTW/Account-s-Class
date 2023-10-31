@@ -1,7 +1,7 @@
 #include <iostream>
 #include "primaryaccount.h"
 
-PrimaryAccount::PrimaryAccount(std::string FullName, std::string IBAN, double sold;double decouvert)
+PrimaryAccount::PrimaryAccount(std::string FullName, std::string IBAN, double sold,double decouvert): Account(FullName, IBAN,  sold)
 {
 	_decouvert = decouvert;
 
@@ -9,22 +9,25 @@ PrimaryAccount::PrimaryAccount(std::string FullName, std::string IBAN, double so
 
 double PrimaryAccount::add(double amount) {
 
-	sold = sold + amount;
+	double newSold = sold() + amount;
+    setSold(newSold);
 
 	return 0.0;
 }
 
 double PrimaryAccount::retreat(double amount)
 {
-	sold = sold - amount;
+	double newSold = sold() - amount;
+    setSold(newSold);
 
 	return 0.0;
 }
 
 double PrimaryAccount::transfert(double amount, Account& people )
 {
-	sold = sold - amount;
-	people.sold = people.sold + amount;
+	double newSold = sold() - amount;
+    setSold(newSold);
+    people.setSold(people.sold() + amount);
 
 	return 0.0;
 }

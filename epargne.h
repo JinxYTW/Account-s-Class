@@ -1,16 +1,18 @@
 #include <iostream>
+#include "account.h"
 
 class Epargne : public Account {
 public:
 
-	Epargne(std::string FullName, std::string IBAN, double sold; double taux) : Account(std::string FullName, std::string IBAN, double sold);
+	Epargne(std::string FullName, std::string IBAN, double sold, double taux) ;
 
+	double apply();
 	
 
 private:
 
 	double _taux;
-	double apply(double sold, double taux);
+	
 
 
 
